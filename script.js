@@ -31,3 +31,37 @@ function descuento(person){
 }
  
 console.log(descuento())
+
+//4 funciones
+//sin retorno y sin parametro
+function numero(){
+    
+    console.log("hola")
+    
+}
+numero()
+//con parametro y con retorno
+function nombre(apellido){
+    apellido="garcia"
+    return apellido
+}
+
+console.log(nombre())
+
+// con retorno sin parmetro
+
+function edad(){
+    year="17"
+    return year
+}
+
+console.log(edad())
+
+//con parametro sin retorno 
+
+function mathcal(calculom){
+    calculom=20+4;
+    console.log(calculom)
+}
+
+mathcal()
