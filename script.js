@@ -34,24 +34,27 @@ console.log(descuento())
 
 //4 funciones
 //sin retorno y sin parametro
-function numero(){
-    
-    console.log("hola")
+function saludo(){
+    let x="Hola mundo" 
+    console.log(x)
     
 }
-numero()
+saludo()
 //con parametro y con retorno
-function nombre(apellido){
-    apellido="garcia"
+function apellidos(apellido){
+    var apellido="garcia"
+    var apellido="solano"
     return apellido
 }
 
-console.log(nombre())
+console.log(apellidos())
 
 // con retorno sin parmetro
 
 function edad(){
-    year="17"
+    const x=7
+    const y=10
+    year=x+y
     return year
 }
 
@@ -60,8 +63,11 @@ console.log(edad())
 //con parametro sin retorno 
 
 function mathcal(calculom){
-    calculom=20+4;
+    var calculom=12*3;
     console.log(calculom)
+    
 }
-
 mathcal()
+
+
+
