@@ -27,3 +27,4 @@ let n=(prompt("ingrese un numero: "))
 let k= (prompt("ingrese el numero de repeticiones : "))
 console.log(superdigit(n,k));
 
+//desarrollado yurley botello
