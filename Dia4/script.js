@@ -150,8 +150,8 @@ while(bool===true){
                 if(y.informacion_personal.id===pedirid){
                     console.log("==================")
                     console.log(`Id: ${y.informacion_personal.id}`);
-                    console.log(`nombre: ${y.informacion_personal.nombre}`);
-                    console.log(`edad: ${y.informacion_personal.edad}`);
+                    console.log(`Id: ${y.informacion_personal.nombre}`);
+                    console.log(`Id: ${y.informacion_personal.edad}`);
                     console.log("==================")
                     console.log("");
                     info["informacion_personal"]={}
@@ -208,8 +208,8 @@ while(bool===true){
                 if(y.informacion_personal.id===pedirid){
                     console.log("==================")
                     console.log(`Id: ${y.informacion_personal.id}`);
-                    console.log(`nombre: ${y.informacion_personal.nombre}`);
-                    console.log(`edad: ${y.informacion_personal.edad}`);
+                    console.log(`Id: ${y.informacion_personal.nombre}`);
+                    console.log(`Id: ${y.informacion_personal.edad}`);
                     console.log("==================")
                     console.log("");
                     delete y.informacion_personal.contacto
@@ -222,7 +222,7 @@ while(bool===true){
                    
                 }
                 
-               
+                 
             }
            
         }
@@ -291,15 +291,11 @@ while(bool===true){
             console.clear()
             console.log("===== VER INFORMACION =====");
             console.log("");
-            for (let y of info){
-               
+            for (const i of info){
+                console.log(`Id: ${i.informacion_personal.id}`);
+                console.log(`Id: ${i.informacion_personal.nombre}`);
+                console.log(`Id: ${i.informacion_personal.edad}`);
                 console.log("==================")
-                console.log(`Id: ${y.informacion_personal.id}`);
-                console.log(`Id: ${y.informacion_personal.nombre}`);
-                console.log(`Id: ${y.informacion_personal.edad}`);
-                console.log("==================")
-                console.log("");
-                
             }
             for (let m of info){
                 console.log("==================")
@@ -318,6 +314,7 @@ while(bool===true){
                 console.log(`año_fin:", ${e.experiencia_laboral.anio_fin}`);
                 console.log("==================")
             }
+
           
           
             
