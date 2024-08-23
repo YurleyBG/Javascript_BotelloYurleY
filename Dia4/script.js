@@ -1,32 +1,38 @@
 var info=[
     {   
-        "informacion_personal": {
-            "id":1,
-            "nombre": "Juan Pérez",
-            "edad": 30,
-            "direccion": {
-                "calle": "Calle Principal",
-                "numero": 123,
-                "ciudad": "Ciudad Ejemplo"
-            },
-            "contacto": {
-                "correo": "juan.perez@example.com",
-                "telefono": "+123456789"
+        "informacion_personal": [
+            {
+                "id":"1",
+                "nombre": "Juan Pérez",
+                "edad": 30,
+                "direccion":{
+                    "calle": "Calle Principal",
+                    "numero": 123,
+                    "ciudad": "Ciudad Ejemplo"
+                },
+                "contacto": {
+                    "correo": "juan.perez@example.com",
+                    "telefono": "+123456789"
+                }
             }
-        },
+        ],
         "historial_educativo": [
             {
-                "nivel": "Secundaria",
-                "institucion": "Instituto Secundario",
-                "anio_inicio": 2000,
-                "anio_fin": 2005
-            },
-            {
-                "nivel": "Universidad",
-                "institucion": "Universidad Ejemplar",
-                "titulo": "Licenciatura en Ciencias",
-                "anio_inicio": 2006,
-                "anio_fin": 2010
+                id:"1"[
+                    {
+                        "nivel": "Secundaria",
+                        "institucion": "Instituto Secundario",
+                        "anio_inicio": 2000,
+                        "anio_fin": 2005
+                    },
+                    {
+                        "nivel": "Universidad",
+                        "institucion": "Universidad Ejemplar",
+                        "titulo": "Licenciatura en Ciencias",
+                        "anio_inicio": 2006,
+                        "anio_fin": 2010
+                    }
+                ]
             }
         ],
         "experiencia_laboral": [
@@ -48,8 +54,13 @@ var info=[
                     "Coordinación de equipos"
                 ]
             }
+                
+
+            
         ]
+    
     }
+    
         
 ]
 
@@ -57,7 +68,7 @@ var info=[
 function menu(){
     console.log("-------------------MENU--------------------")
     console.log("1. INFORMACION PERSONAL");
-    console.log("2. HISTORIAL EDCATIVO");
+    console.log("2. HISTORIAL EDUCATIVO");
     console.log("3. EXPERINECIA LABORAL");
     console.log("4. SALIR");
     console.log("-------------------------------------------")
@@ -65,7 +76,7 @@ function menu(){
 menu()
 function menuinfop(){
     console.log("-------------------MENU--------------------")
-    console.log("1. AGREGAR DATOS");
+    console.log("1. AGREGAR ");
     console.log("2. ACTUALIZAR DATOS");
     console.log("3. ELIMINAR DATOS");
     console.log("4. VER INFORMACIÖN");
@@ -74,20 +85,16 @@ function menuinfop(){
 }
 function menuhisedu(){
     console.log("-------------------MENU--------------------")
-    console.log("1. AGREGAR DATOS");
-    console.log("2. ACTUALIZAR DATOS");
-    console.log("3. ELIMINAR DATOS");
-    console.log("4. VER INFORMACIÖN");
-    console.log("5. VOLVER AL MENU PRINCIPAL");
+    console.log("1. AGREGAR ");
+    console.log("2. VER INFORMACIÖN");
+    console.log("3. VOLVER AL MENU PRINCIPAL");
     console.log("-------------------------------------------")
 }
 function menuverinfo(){
     console.log("-------------------MENU--------------------")
-    console.log("1. AGREGAR DATOS");
-    console.log("2. ACTUALIZAR DATOS");
-    console.log("3. ELIMINAR DATOS");
-    console.log("4. VER INFORMACIÖN");
-    console.log("5. VOLVER AL MENU PRINCIPAL");
+    console.log("1. AGREGAR ");
+    console.log("2. VER INFORMACIÖN");
+    console.log("3. VOLVER AL MENU PRINCIPAL");
     console.log("-------------------------------------------")
 }
 function menuopci(){
@@ -95,14 +102,16 @@ function menuopci(){
     console.log("1. Nombre");
     console.log("2. Edad");
     console.log("3. Direccion");
-    console.log("4. Contacto");
-    console.log("5. Volver al menu principal");
+    console.log("4. telefono");
+    console.log("5. correo");
+    console.log("6. Volver al menu principal");
     console.log("-------------------------------------------")
 }
 
+
 let bool=true
 while(bool===true){
-    let opc=parseInt(prompt("ingresa la opcion a la que deseas acceder: "))
+    var opc=parseInt(prompt("ingresa la opcion a la que deseas acceder: "))
 
     if(opc===1){
         
@@ -111,7 +120,7 @@ while(bool===true){
         console.log("")
         menuinfop()
 
-        let opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
         if(opci===1){
             console.log("===== AGREGAR DATOS =====");
             let id=prompt("ingrese la id: ")
@@ -122,35 +131,235 @@ while(bool===true){
             let ciudad=prompt("ingresa la ciudad")
             let telefono=prompt(" ingresa el numero de telefono:")
             let correo=prompt("ingresa tu correo :")
-            info.push({ "id":id, "nombre":name, "edad":old, "direccion":{"calle":calle, "numero":numero,"ciudad":ciudad},"contacto": {"correo":correo,"telefono": telefono}})
+            info[0]["informacion_personal"].push({ "id":id, "nombre":name, "edad":old, "direccion":{"calle":calle, "numero":numero,"ciudad":ciudad},"contacto": {"correo":correo,"telefono": telefono}})
             console.log("Se ha creado con exito!");
+
+            console.log("")
+            console.log("Volviendo al menu principal...");
+            menuinfop()
+            var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
             
         }
         if(opci===2){
             console.clear()
             console.log("===== ACTUALIZAR DATOS =====");
             console.log("");
-            let pedirid=prompt("ingrese la id a la que quiere acceder:")
-            var comparador=info[0]["informacion_personal"]["id"]
-            if(comparador===pedirid){
-                console.log("hola")
-                menuopci()
-                let opcio=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
-                if(opcio===1){
-                    let newname=prompt("ingrese el nuevo nombre")
-                    info["informacion_personal"][pedirid-1]["nombre"]=newname
-                    console.log("nombre",m.nombre);
-                    
-
+            //var comparador=info["informacion_personal"]["id"]//
+            for (const i of info[0]["informacion_personal"]){
+                console.log("==================")
+                console.log("Id: ", i["id"]);
+                console.log("Nombre: ", i["nombre"]);
+                console.log("Edad: ", i["edad"]);
+                console.log("==================")
+                console.log("");
+            } 
+            let pedirid=prompt("ingrese la id en la que quiere actualizar datos: ")
+            for (const y of info[0]["informacion_personal"]){
+                if(y["id"]==pedirid){
+                    menuopci()
+                    let opcio=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+                    if(opcio===1){
+                        let newname=prompt("ingrese el nuevo nombre")
+                        info[0]["informacion_personal"][pedirid-1]["nombre"]=newname
+                        console.log("Su nombre se ha actualizado con exito!!!") 
+                    }
+                    if(opcio===2){
+                        let newedad=parseInt(prompt("ingrese la edad actual: "))
+                        info[0]["informacion_personal"][pedirid-1]["edad"]=newedad
+                        console.log("Su nombre se ha actualizado con exito!!!") 
+                    }
+                    if(opcio===3){
+                        let newcall=prompt("ingrese la calle: ")
+                        let newnum=prompt("ingrese el numero: ")
+                        let newciu=prompt("ingrese la ciudad: ")
+                        info[0]["informacion_personal"]["direccion"][pedirid-1]["calle"]=newcall
+                        info[0]["informacion_personal"]["direccion"][pedirid-1]["numero"]=newnum
+                        info[0]["informacion_personal"]["direccion"][pedirid-1]["ciudad"]=newciu
+                        console.log("Su nombre se ha actualizado con exito!!!")   
+                    }
+                    if(opcio===4){
+                        let newconct=prompt("ingrese el nuevo numero de telefono: ")
+                        info[0]["informacion_personal"]["contacto"][pedirid-1]["telefono"]=newconct
+                        console.log("Su nombre se ha actualizado con exito!!!") 
+                    }
+                    if(opcio===5){
+                        let newcorreo=prompt("ingrese el nuevo correo: ")
+                        info[0]["informacion_personal"][pedirid-1]["contacto"]["correo"]=newcorreo
+                        console.log("Su nombre se ha actualizado con exito!!!")
+                    }
+                    if(opcio===6){
+                        console.log("")
+                        console.log("Volviendo al menu principal...");
+                        menuinfop()
+                        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+                    }
                     
                 }
+            }
+        }
+        if(opci===3){
+            console.clear()
+            console.log("=====ELIMINAR DATOS =====");
+            console.log("");
+            for (const i of info[0]["informacion_personal"]){
+                console.log("==================")
+                console.log("Id: ", i["id"]);
+                console.log("Nombre: ", i["nombre"]);
+                console.log("Edad: ", i["edad"]);
+                console.log("==================")
+                console.log("");
+            } 
+            let pedirid=prompt("ingrese la id del usuario al que desea eliminar(solo conctactos correo y telefono): ")
+            for (const y of info[0]["informacion_personal"]){
+                if(y["id"]===pedirid){
+                    for (const n of info[0]["informacion_personal"]){
+                        delete n["contacto"]
+                        console.log("Se ha realizado con exito!!")
+                        console.log("")
+                        console.log("Volviendo al menu principal...");
+                        menuinfop()
+                        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+                    }
+                }
+            }
+        }
+        if(opci===4){
+            console.clear()
+            console.log("===== VER INFORMACION =====");
+            console.log("");
+            for (const i of info[0]["informacion_personal"]){
+                console.log("==================")
+                console.log("Id: ", i["id"]);
+                console.log("Nombre: ", i["nombre"]);
+                console.log("Edad: ", i["edad"]);
+                console.log("==================")
+                
+            }
+            console.log("Direccion: ");
+            console.log("Calle:", info.calle);
+            console.log("Numero:", info["numero"]);
+            console.log("Ciudad:", info.ciudad);
+            console.log("==================")
+            console.log("contacto: ");
+            console.log("telefono:", info.telefono);
+            console.log("correo:", info.correo);
+            console.log("==================")
+            console.log("");  
+        }
+        if(opci==5){
+            console.clear()
+            console.log("Volviendo al menu principal....");
+            console.log("");
+            bool=true
+            menu()
+            var opc=parseInt(prompt("ingresa la opcion a la que deseas acceder: "))
+            
+        }
+    }
+    if(opc===2){
+        
+        console.clear()
+        console.log("------------HISTORIAL EDUCATIVO-----------")
+        console.log("")
+        menuhisedu()
 
-    
+        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+        if(opci===1){
+            console.log("===== AGREGAR DATOS =====");
+            let idif=prompt("ingrese la id: ")
+            let instituto=prompt("ingrese el nombre: ")
+            let añois=parseInt(prompt("ingresa la edad :"))
+            let añofs=prompt(" ingresa la calle: ")
+            let institucion=prompt("ingresa el numero de la calle")
+            let titulo=prompt("ingresa la ciudad")
+            let añoiu=prompt(" ingresa el numero de telefono:")
+            let añofu=prompt("ingresa tu correo :")
+            info[0]["historial_educativo"].push({ "id":idif [{"nivel":"Secundaria", "institucion":instituto, "anio_inicio":añois ,"anio_fin":añofs},{"nivel":"universidad", "institucion":institucion,"titulo":titulo, "anio_inicio":añoiu,"anio_fin":añofu}]})
+            console.log("Se ha creado con exito!");
+
+            console.log("")
+            console.log("Volviendo al menu principal...");
+            menuhisedu()
+            var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+            
+        }
+        if(opci===2){
+            console.clear()
+            console.log("===== VER INFORMACION =====");
+            console.log("");
+            for (const i of info[0]["informacion_personal"]){
+                console.log("==================")
+                console.log("Id: ", i["id"]);
+                console.log("nombre: ", i["nombre"]);
+                console.log("Edad: ", i["edad"]);
+                console.log("==================")
+                console.log(""); 
+            }
+            for (const u of info[0]["historial_educativo"]){
+                for(const x of u.id){
+                    
+                    console.log("nivel: ", x["nivel"]);
+                    console.log("institucion: ", x["institucion"]);
+                    console.log("año_inicio: ", x["anio_inicio"]);
+                    console.log("año_fin: ", x["anio_fin"]);
+                }
+
             }
             
-            
-
         }
+    }
+    if(opc===3){
+        
+        console.clear()
+        console.log("------------EXPERIENCIA LABORAL-----------")
+        console.log("")
+        menuverinfo()
+
+        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+        if(opci===1){
+            console.log("===== AGREGAR DATOS =====");
+            let puesto=prompt("ingrese la id: ")
+            let empresa=prompt("ingrese el nombre: ")
+            let periodo=parseInt(prompt("ingresa la edad :"))
+            let responsabilidades=prompt(" ingresa la calle: ")
+            info[0]["experiencia_laboral"].push({"puesto":puesto,"empresa":empresa,"periodo":periodo,"responsabilidades":[responsabilidades]})
+            console.log("Se ha creado con exito!");
+
+            console.log("")
+            console.log("Volviendo al menu principal...");
+            menuhisedu()
+            var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+            
+        }
+        if(opci===2){
+            console.clear()
+            console.log("===== VER INFORMACION =====");
+            console.log("");
+            for (const i of info[0]["informacion_personal"]){
+                console.log("==================")
+                console.log("Id: ", i["id"]);
+                console.log("nombre: ", i["nombre"]);
+                console.log("Edad: ", i["edad"]);
+                console.log("==================")
+            }   
+            console.log("puesto: ", info.puesto);
+            console.log("empresa: ", info.empresa);
+            console.log("periodo: ", info.periodo);
+            console.log("responsabilidades: ", info.responsabilidad); 
+            console.log("==================")   
+        }
+        console.log("")
+        console.log("Volviendo al menu principal...");
+        menuhisedu()
+        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+        bool=true
+    }
+    if(opc===4){
+        
+        console.clear()
+        console.log("Programa finalizado...")
+        console.log("")
+        bool=false
     }
     bool=false
 }
