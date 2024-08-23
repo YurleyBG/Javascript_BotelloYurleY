@@ -1,22 +1,22 @@
 var info=[
     {   
-        "informacion_personal": [
-            {
-                "id":"1",
-                "nombre": "Juan Pérez",
-                "edad": 30,
-                "direccion":{
-                    "calle": "Calle Principal",
-                    "numero": 123,
-                    "ciudad": "Ciudad Ejemplo"
-                },
-            
-                "contacto": {
-                    "correo": "juan.perez@example.com",
-                    "telefono": "+123456789"
-                }
+        "informacion_personal": 
+        {
+            "id":"1",
+            "nombre": "Juan Pérez",
+            "edad": 30,
+            "direccion":{
+                "calle": "Calle Principal",
+                "numero": 123,
+                "ciudad": "Ciudad Ejemplo"
+            },
+        
+            "contacto": {
+                "correo": "juan.perez@example.com",
+                "telefono": "+123456789"
             }
-        ],
+        },
+        
         "historial_educativo": [
             {
                 "nivel": "Secundaria",
@@ -142,47 +142,51 @@ while(bool===true){
             console.clear()
             console.log("===== ACTUALIZAR DATOS =====");
             console.log("");
-            //var comparador=info["informacion_personal"]["id"]//
-            for (const i of info[0]["informacion_personal"]){
-                console.log("==================")
-                console.log("Id: ", i["id"]);
-                console.log("Nombre: ", i["nombre"]);
-                console.log("Edad: ", i["edad"]);
-                console.log("==================")
-                console.log("");
-            } 
-            let pedirid=prompt("ingrese la id en la que quiere actualizar datos: ")
-            for (const y of info[0]["informacion_personal"]){
-                if(y["id"]==pedirid){
+           // var comparador=info["informacion_personal"]["id"]
+            
+            var pedirid=prompt("ingrese la id en la que quiere actualizar datos: ")
+            for (let y of info){
+                
+                if(y.informacion_personal.id===pedirid){
+                    console.log("==================")
+                    console.log(`Id: ${y.informacion_personal.id}`);
+                    console.log(`nombre: ${y.informacion_personal.nombre}`);
+                    console.log(`edad: ${y.informacion_personal.edad}`);
+                    console.log("==================")
+                    console.log("");
+                    info["informacion_personal"]={}
                     menuopci()
+
                     let opcio=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
                     if(opcio===1){
-                        let newname=prompt("ingrese el nuevo nombre")
-                        info[0]["informacion_personal"][pedirid-1]["nombre"]=newname
+                        newname=prompt("ingrese el nuevo nombre")
+                        y.informacion_personal.nombre=newname
                         console.log("Su nombre se ha actualizado con exito!!!") 
                     }
                     if(opcio===2){
                         let newedad=parseInt(prompt("ingrese la edad actual: "))
-                        info[0]["informacion_personal"][pedirid-1]["edad"]=newedad
+                    info[0]["informacion_personal"][pedirid-1]["edad"]=newedad
                         console.log("Su nombre se ha actualizado con exito!!!") 
                     }
                     if(opcio===3){
                         let newcall=prompt("ingrese la calle: ")
                         let newnum=prompt("ingrese el numero: ")
                         let newciu=prompt("ingrese la ciudad: ")
-                        info[0]["informacion_personal"]["direccion"][pedirid-1]["calle"]=newcall
-                        info[0]["informacion_personal"]["direccion"][pedirid-1]["numero"]=newnum
-                        info[0]["informacion_personal"]["direccion"][pedirid-1]["ciudad"]=newciu
-                        console.log("Su nombre se ha actualizado con exito!!!")   
+                        y.informacion_personal.direccion.calle=newcall
+                        y.informacion_personal.direccion.numero=newnum
+                        y.informacion_personal.direccion.ciudad=newciu
+                        console.log("Su nombre se ha actualizado con exito!!!")  
+                    
+                        
                     }
                     if(opcio===4){
                         let newconct=prompt("ingrese el nuevo numero de telefono: ")
-                        info[0]["informacion_personal"]["contacto"][pedirid-1]["telefono"]=newconct
+                        y.informacion_personal.contacto.telefono=newconct
                         console.log("Su nombre se ha actualizado con exito!!!") 
                     }
                     if(opcio===5){
                         let newcorreo=prompt("ingrese el nuevo correo: ")
-                        info[0]["informacion_personal"][pedirid-1]["contacto"]["correo"]=newcorreo
+                        y.informacion_personal.contacto.correo=newcorreo
                         console.log("Su nombre se ha actualizado con exito!!!")
                     }
                     if(opcio===6){
@@ -199,27 +203,28 @@ while(bool===true){
             console.clear()
             console.log("=====ELIMINAR DATOS =====");
             console.log("");
-            for (const i of info[0]["informacion_personal"]){
-                console.log("==================")
-                console.log("Id: ", i["id"]);
-                console.log("Nombre: ", i["nombre"]);
-                console.log("Edad: ", i["edad"]);
-                console.log("==================")
-                console.log("");
-            } 
             let pedirid=prompt("ingrese la id del usuario al que desea eliminar(solo conctactos correo y telefono): ")
-            for (const y of info[0]["informacion_personal"]){
-                if(y["id"]===pedirid){
-                    for (const n of info[0]["informacion_personal"]){
-                        delete n["contacto"]
-                        console.log("Se ha realizado con exito!!")
-                        console.log("")
-                        console.log("Volviendo al menu principal...");
-                        menuinfop()
-                        var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
-                    }
+            for (let y of info){
+                if(y.informacion_personal.id===pedirid){
+                    console.log("==================")
+                    console.log(`Id: ${y.informacion_personal.id}`);
+                    console.log(`nombre: ${y.informacion_personal.nombre}`);
+                    console.log(`edad: ${y.informacion_personal.edad}`);
+                    console.log("==================")
+                    console.log("");
+                    delete y.informacion_personal.contacto
+                   
+                    console.log("Se ha realizado con exito!!")
+                    console.log("")
+                    console.log("Volviendo al menu principal...");
+                    menuinfop()
+                    var opci=parseInt(prompt("ingrese el numero de opcion a la que desea acceder: "))
+                   
                 }
+                
+               
             }
+           
         }
         if(opci===4){
             console.clear()
@@ -286,32 +291,38 @@ while(bool===true){
             console.clear()
             console.log("===== VER INFORMACION =====");
             console.log("");
-            for (const i of info[0]["informacion_personal"]){
+            for (let y of info){
+               
                 console.log("==================")
-                console.log("Id: ", i["id"]);
-                console.log("nombre: ", i["nombre"]);
-                console.log("Edad: ", i["edad"]);
+                console.log(`Id: ${y.informacion_personal.id}`);
+                console.log(`Id: ${y.informacion_personal.nombre}`);
+                console.log(`Id: ${y.informacion_personal.edad}`);
                 console.log("==================")
-                console.log(""); 
+                console.log("");
+                
             }
-            for (const u of info[0]["historial_educativo"]){
-                console.log(`nivel:", ${u["nivel"]}`);
-                console.log(`institucion:", ${u["institucion"]}`);
-                console.log(`año_inicio:", ${u["anio_inicio"]}`);
-                console.log(`año_fin:", ${u["anio_fin"]}`);
+            for (let m of info){
+                console.log("==================")
+                console.log(`nivel: ${m.historial_educativo.nivel}`);
+                console.log(`institucion: ${m.historial_educativo.institucion}`);
+                console.log(`año_inicio: ${m.historial_educativo.anio_inicio}`);
+                console.log(`año_fin ${m.historial_educativo.anio_fin}`);
+                console.log("==================")
+                console.log("");
             }
-            for (const e of info[0]["historial_educativo"]){
-                console.log(`nivel:", ${e["nivel"]}`);
-                console.log(`institucion:", ${e["institucion"]}`);
-                console.log(`titulo:", ${e["titulo"]}`);
-                console.log(`año_inicio:", ${e["anio_inicio"]}`);
-                console.log(`año_fin:", ${e["anio_fin"]}`);
+            for (let e of info){
+                console.log(`nivel:", ${e.experiencia_laboral.nivel}`);
+                console.log(`institucion:", ${e.experiencia_laboral.institucion}`);
+                console.log(`titulo:", ${e.experiencia_laboral.titulo}`);
+                console.log(`año_inicio:", ${e.experiencia_laboral.anio_inicio}`);
+                console.log(`año_fin:", ${e.experiencia_laboral.anio_fin}`);
                 console.log("==================")
             }
           
           
             
         }
+        break
     }
     if(opc===3){
         
