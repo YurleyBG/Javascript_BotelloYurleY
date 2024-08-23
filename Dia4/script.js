@@ -10,6 +10,7 @@ var info=[
                     "numero": 123,
                     "ciudad": "Ciudad Ejemplo"
                 },
+            
                 "contacto": {
                     "correo": "juan.perez@example.com",
                     "telefono": "+123456789"
@@ -18,22 +19,19 @@ var info=[
         ],
         "historial_educativo": [
             {
-                id:"1"[
-                    {
-                        "nivel": "Secundaria",
-                        "institucion": "Instituto Secundario",
-                        "anio_inicio": 2000,
-                        "anio_fin": 2005
-                    },
-                    {
-                        "nivel": "Universidad",
-                        "institucion": "Universidad Ejemplar",
-                        "titulo": "Licenciatura en Ciencias",
-                        "anio_inicio": 2006,
-                        "anio_fin": 2010
-                    }
-                ]
+                "nivel": "Secundaria",
+                "institucion": "Instituto Secundario",
+                "anio_inicio": 2000,
+                "anio_fin": 2005
+            },
+            {
+                "nivel": "Universidad",
+                "institucion": "Universidad Ejemplar",
+                "titulo": "Licenciatura en Ciencias",
+                "anio_inicio": 2006,
+                "anio_fin": 2010
             }
+           
         ],
         "experiencia_laboral": [
             {
@@ -233,18 +231,19 @@ while(bool===true){
                 console.log("Nombre: ", i["nombre"]);
                 console.log("Edad: ", i["edad"]);
                 console.log("==================")
+                console.log("Direccion: ");
+                console.log(`Calle:, ${i["direccion"]["calle"]}`);
+                console.log(`Numero:  ${i["direccion"]["numero"]}`);
+                console.log(`Ciudad:", ${i["direccion"]["ciudad"]}`);
+                console.log("==================")
+                console.log("contacto: ");
+                console.log(`telefono:", ${i["contacto"]["telefono"]}`);
+                console.log(`correo:", ${i["contacto"]["correo"]}`);
+                console.log("==================")
+                console.log("");  
                 
             }
-            console.log("Direccion: ");
-            console.log("Calle:", info.calle);
-            console.log("Numero:", info["numero"]);
-            console.log("Ciudad:", info.ciudad);
-            console.log("==================")
-            console.log("contacto: ");
-            console.log("telefono:", info.telefono);
-            console.log("correo:", info.correo);
-            console.log("==================")
-            console.log("");  
+            
         }
         if(opci==5){
             console.clear()
@@ -296,15 +295,21 @@ while(bool===true){
                 console.log(""); 
             }
             for (const u of info[0]["historial_educativo"]){
-                for(const x of u.id){
-                    
-                    console.log("nivel: ", x["nivel"]);
-                    console.log("institucion: ", x["institucion"]);
-                    console.log("año_inicio: ", x["anio_inicio"]);
-                    console.log("año_fin: ", x["anio_fin"]);
-                }
-
+                console.log(`nivel:", ${u["nivel"]}`);
+                console.log(`institucion:", ${u["institucion"]}`);
+                console.log(`año_inicio:", ${u["anio_inicio"]}`);
+                console.log(`año_fin:", ${u["anio_fin"]}`);
             }
+            for (const e of info[0]["historial_educativo"]){
+                console.log(`nivel:", ${e["nivel"]}`);
+                console.log(`institucion:", ${e["institucion"]}`);
+                console.log(`titulo:", ${e["titulo"]}`);
+                console.log(`año_inicio:", ${e["anio_inicio"]}`);
+                console.log(`año_fin:", ${e["anio_fin"]}`);
+                console.log("==================")
+            }
+          
+          
             
         }
     }
@@ -342,11 +347,14 @@ while(bool===true){
                 console.log("Edad: ", i["edad"]);
                 console.log("==================")
             }   
-            console.log("puesto: ", info.puesto);
-            console.log("empresa: ", info.empresa);
-            console.log("periodo: ", info.periodo);
-            console.log("responsabilidades: ", info.responsabilidad); 
-            console.log("==================")   
+            for (const u of info[0][""]){
+                console.log(`puesto:", ${u["puesto"]}`);
+                console.log(`empresa:", ${u["emoresa"]}`);
+                console.log(`periodo:", ${u["periodo"]}`);
+                console.log(`responsabilidad:", ${u["responsabilidad"]}`);
+                console.log("==================") 
+            }
+           
         }
         console.log("")
         console.log("Volviendo al menu principal...");
