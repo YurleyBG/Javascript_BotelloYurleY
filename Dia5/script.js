@@ -28,6 +28,20 @@ var json=[
                 "quantity": 5,
                 "orderDate": "2024-08-23",
                 "status": "Delivered"
+            },
+            {
+                "orderId": 1001,
+                "productId": 1,
+                "quantity": 5,
+                "orderDate": "2024-08-23",
+                "status": "Delivered"
+            },
+            {
+                "orderId": 1001,
+                "productId": 1,
+                "quantity": 5,
+                "orderDate": "2024-09-24",
+                "status": "Delivered"
             }
         ]
     }
@@ -38,9 +52,10 @@ function menu() {
     console.log("1. Product Management");
     console.log("2. Supplier Management");
     console.log("3. Order Management");
-    console.log("4. Reporting");
-    console.log("5. Search and Filter ");
-    console.log("6. Salir ");
+    console.log("4. Stock Management");
+    console.log("5. Reporting");
+    console.log("6. Search and Filter ");
+    console.log("7. Salir ");
     console.log("-------------------------------------------")
     
 }
@@ -289,31 +304,24 @@ function generateSalesReport(startDate, endDate){
     console.log("StarDate:", startDate)
     console.log("EndDate:", endDate)
     let contador=0;
-    for( let i=0 ; i < json[0]["orders"].length; i++){
+    console.log("Total number of orders:",contador)
+    let fsales=json[0]["orders"].filter(i => i["orderDate"] >= startDate && i["orderDate"]<= endDate)
+    for( let i=0 ; i < fsales.length; i++){
+       
         contador++;
        
     }
-    console.log("Total number of orders:",contador)
-    
-
-
+   
+  
     for(let i of json){
-        if(i.products.id===i.orders.orderId){
-            for(let m of json[0]["orders"]){
-                console.log("Cantidad_vendida: ", m["quantity"]);
-                console.log("==================")
-            }
-        }
-    }for(let i of json[0]["products"]){
-        for(let m of json[0]["orders"]){
-            if(i.id===m.orderId){
-                console.log("precio:",i.products.price); 
+        for(let m of json){
+            if(i.products.id===m.orders.orderId){
                 console.log("precioTotal:",i.products.price*m.orders.quantity); 
             }
         }
     }
         
-    
+    console.log("-",fsales);
    
 
 
@@ -343,6 +351,35 @@ function generateInventoryReport() {
 
     
 }
+function checkStockLevels(){
+    for(let i of json[0]["products"]){
+        if(i["quantityInStock"]<10){
+            
+        
+            console.log("==================")
+            console.log("Id: ", i["id"]);
+            console.log("Name: ", i["name"]);
+            console.log("Category: ", i["category"]);
+            console.log("Price: ", i["price"]);
+            console.log("quantityInStock: ", i["quantityInStock"]);
+            console.log("supplierId: ", i["supplierId"]);
+            console.log("==================")
+            
+
+        }
+    }
+}
+
+function restockProduct(id, quantity){
+  for(let i of json[0]["products"]){
+    if(i["id"]===id){
+        i["quantityInStock"]+=quantity
+       
+    }
+   
+  }
+}
+
 bool=true
 while(bool===true){
     menu()
@@ -409,6 +446,7 @@ while(bool===true){
             }
             if(eli===6){
                 console.log("Regresando, un momento...")
+                viewProducts()
             }
             
           
@@ -566,6 +604,28 @@ while(bool===true){
     }
     if(opc===4){
         console.clear()
+        console.log("========STOCK==========");
+        console.log("")
+        let mostrar=parseInt(prompt(":::::MENU::::\n1.returns products with low stock\n2.increases the stock level of a product\ningrese el numero de la opcion a la que desea acceder: "))
+        if(mostrar===1){
+            console.clear()
+            console.log("======== returns products with low stock==========");
+            console.log("")
+            checkStockLevels()
+        }
+        if(mostrar===2){
+            let id=parseInt(prompt("ingrese la id del producto donde va a actualizar: "))
+            restockProduct( id)
+            quantity=parseInt(prompt("ingrese la cantidad: "))
+            restockProduct( id,quantity)
+            viewProducts()
+            console.log("se ha realizado su actualizacion con exito!!")
+            
+            
+        }
+    }
+    if(opc===5){
+        console.clear()
         console.log("========REPORTING==========");
         console.log("")
         let mostrar=parseInt(prompt(":::::MENU::::\n1.Sales reports\n2.Reports products\ningrese el numero de la opcion a la que desea acceder: "))
@@ -573,6 +633,9 @@ while(bool===true){
             console.clear()
             console.log("======== SALES REPORTS==========");
             console.log("")
+            startDate=prompt("ingrese la fecha (yyyy-mm-dd")
+            endDate=prompt("ingrese la fecha (yyyy-mm-dd")
+            generateSalesReport(startDate, endDate)
            
             let mostrar=parseInt(prompt(":::::MENU::::\n1.Diario\n2.Mensual\ningrese el numero de la opcion a la que desea acceder: "))
             if(mostrar===1){
@@ -605,10 +668,11 @@ while(bool===true){
             console.log("========REPORTS PRODUCTS==========");
             console.log("")
             generateInventoryReport()
+            
         }
         
     }
-    if(opc===5){ 
+    if(opc===6){ 
         console.clear()
         console.log("========SEARCH===========");
         console.log("")
@@ -666,7 +730,7 @@ while(bool===true){
             }
         }  
     }
-    if(opc===6){
+    if(opc===7){
         console.log("Finalizando programa...")
         bool=false
     }
