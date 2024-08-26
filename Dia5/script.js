@@ -38,10 +38,9 @@ function menu() {
     console.log("1. Product Management");
     console.log("2. Supplier Management");
     console.log("3. Order Management");
-    console.log("4. Stock Management");
-    console.log("5. Reporting");
-    console.log("6. Search and Filter");
-    console.log("7. Salir");
+    console.log("4. Reporting");
+    console.log("5. Search and Filter ");
+    console.log("6. Salir ");
     console.log("-------------------------------------------")
     
 }
@@ -117,7 +116,7 @@ function menuactualizar2(){
     console.log("3. exit"); 
     console.log("-------------------------------------------")
 }
-function menuactualizar2(){
+function menuactualizar3(){
     console.log("-------------------MENU--------------------")
     console.log("1. quantity");
     console.log("2. status ")
@@ -176,7 +175,7 @@ function viewProducts(){
         console.log("Category: ", i["category"]);
         console.log("Price: ", i["price"]);
         console.log("quantityInStock: ", i["quantityInStock"]);
-        console.log("supplierId ", i["supplierId"]);
+        console.log("supplierId: ", i["supplierId"]);
         console.log("==================")
     }
 }
@@ -218,8 +217,8 @@ function viewSuppliers(){
         console.log("Name: ", i["name"]);
         console.log("ContactInfo: ");
         console.log("Phone: ", i["contactInfo"]["phone"]);
-        console.log("Email ",i["contactInfo"]["email"]);
-        console.log("Address", i["contactInfo"]["address"]);
+        console.log("Email:",i["contactInfo"]["email"]);
+        console.log("Address:", i["contactInfo"]["address"]);
         console.log("==================")
     }
 }
@@ -249,6 +248,7 @@ function deleteSupplier(id){
 }
 function addOrder(order){
     json[0]["orders"].push(order)
+    
 }
 function viewOrders(){
     for(let i of json[0]["orders"]){
@@ -284,6 +284,65 @@ function deleteOrder(orderId){
     }
 
 }
+function generateSalesReport(startDate, endDate){
+    console.log("==================")
+    console.log("StarDate:", startDate)
+    console.log("EndDate:", endDate)
+    let contador=0;
+    for( let i=0 ; i < json[0]["orders"].length; i++){
+        contador++;
+       
+    }
+    console.log("Total number of orders:",contador)
+    
+
+
+    for(let i of json){
+        if(i.products.id===i.orders.orderId){
+            for(let m of json[0]["orders"]){
+                console.log("Cantidad_vendida: ", m["quantity"]);
+                console.log("==================")
+            }
+        }
+    }for(let i of json[0]["products"]){
+        for(let m of json[0]["orders"]){
+            if(i.id===m.orderId){
+                console.log("precio:",i.products.price); 
+                console.log("precioTotal:",i.products.price*m.orders.quantity); 
+            }
+        }
+    }
+        
+    
+   
+
+
+}
+function generateInventoryReport() {
+    for(let i of json[0]["products"]){
+       
+        console.log("==================")
+        console.log("Id: ", i["id"]);
+        console.log("Name: ", i["name"]);
+        console.log("Category: ", i["category"]);
+        console.log("==================")
+    }
+    for(let i of json[0]["suppliers"]){
+        console.log("Id: ", i["id"]);
+        console.log("Name: ", i["name"]);
+        console.log("ContactInfo: ");
+        console.log("Phone: ", i["contactInfo"]["phone"]);
+        console.log("Email: ",i["contactInfo"]["email"]);
+        console.log("Address:", i["contactInfo"]["address"]);
+        console.log("==================")
+    }
+    for(let i of json[0]["products"]){
+        console.log("value_of_stock : ", i["price"]*i["quantityInStock"]);
+        console.log("==================")
+    }
+
+    
+}
 bool=true
 while(bool===true){
     menu()
@@ -305,7 +364,7 @@ while(bool===true){
             let quantityInStock=parseInt(prompt("ingrese la cantidad del producto: "))
             let supplierId=parseInt(prompt("ingrese el id del provedor"))
             product.push([{"id":id,"name":name,"category":category,"price":price,"quantityInStock":quantityInStock,"supplierId":supplierId}])
-            console.log(addProduct(product));
+            addProduct(product)
            
             
         }
@@ -325,27 +384,27 @@ while(bool===true){
             let eli=parseInt(prompt("ingresa la opcion donde vas a actualizar: "))
             if(eli===1){
                 newDetails=prompt("ingrese la nueva actualizacion del nombre: ")
-                console.log(updateProduct(id,newDetails))
+                updateProduct(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===2){
                 newDetails=prompt("ingrese la nueva actualizacion de la categoria: ")
-                console.log(updateProduct(id,newDetails))
+                updateProduct(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===3){
                 newDetails=prompt("ingrese la nueva actualizacion del precio: ")
-                console.log(updateProduct(id,newDetails))
+                updateProduct(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===4){
                 newDetails=prompt("ingrese la nueva actualizacion de la cantidad : ")
-                console.log(updateProduct(id,newDetails))
+                updateProduct(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===5){
                 newDetails=prompt("ingrese la nueva actualizacion de la id del proveedor : ") 
-                console.log(updateProduct(id,newDetails))
+                updateProduct(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===6){
@@ -359,7 +418,7 @@ while(bool===true){
             console.log("=========UPDATE PRODUCT===========");
             console.log("")
             let id=parseInt(prompt("ingrese la id del producto que vas a eliminar: "))
-            console.log(deleteProduct(id));
+            deleteProduct(id)
             console.log("se ha realizado la eliminacion con exito!!");
             console.log(json);
 
@@ -387,7 +446,7 @@ while(bool===true){
             let email=parseInt(prompt("ingrese el precio del producto: "))
             let address=parseInt(prompt("ingrese la cantidad del producto: "))
             supplier.push([{"id":id,"name":name,"contactInfo":{"phone":phone,"email":email,"address":address}}])
-            console.log(addSupplier(supplier));
+            addSupplier(supplier)
             
         }
         if(elije===2){
@@ -406,14 +465,14 @@ while(bool===true){
             let eli=parseInt(prompt("ingresa la opcion donde vas a actualizar: "))
             if(eli===1){
                 newDetails=prompt("ingrese la nueva actualizacion del nombre: ")
-                console.log(updateSupplier(id,newDetails))
+                updateSupplier(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===2){
                 newDetails=prompt("ingrese la nueva actualizacion del numero de telefono: ")
                 newDetails=prompt("ingrese la nueva actualizacion del numero de email: ")
                 newDetails=prompt("ingrese la nueva actualizacion del numero de address: ")
-                console.log(updateSupplier(id,newDetails))
+                updateSupplier(id,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===3){
@@ -427,9 +486,9 @@ while(bool===true){
             console.log("=========DELETE SUPPLIER===========");
             console.log("")
             let id=parseInt(prompt("ingrese la id del producto que vas a eliminar: "))
-            console.log(deleteSupplier(id));
+            deleteSupplier(id)
             console.log("se ha realizado la eliminacion con exito!!");
-            console.log(json);
+          
 
             
         }
@@ -445,15 +504,18 @@ while(bool===true){
         let elije=parseInt(prompt("ingrese el numero de la opcion a la que desea acceder: "))
         if(elije===1){
           
-            order=[]
+            let order=[]
             console.log("=========ADD ORDER===========");
-            let orderid=parseInt(prompt("ingrese la id del producto: "))
-            let productid=parseInt(prompt("ingrese el nombre del producto: "))
-            let quantity=parseInt(prompt("ingrese la categoria: "))
-            let date=prompt("ingrese el precio del producto: ")
-            let status=prompt("ingrese la cantidad del producto: ")
-            supplier.push([{"orderId":orderid,"productId":productid,"quantity":quantity,"orderDate":date,"status":status}])
-            console.log(addOrder(order));
+            let orderid=parseInt(prompt("ingrese una id para la orden: "))
+            let productid=parseInt(prompt("ingrese la id del producto que quiere: "))
+            let quantity1=parseInt(prompt("ingrese la cantidad que va a comprar: "))
+            let date= new Date()
+            let fechaactual= date.toLocaleDateString('en-CA')
+            let status=prompt("ingrese el status de la orden: ")
+            order.push([{"orderId":orderid,"productId":productid,"quantity":quantity1,"orderDate":fechaactual,"status":status}])
+            addOrder(order)
+          
+           
             
         }
         if(elije===2){
@@ -466,18 +528,18 @@ while(bool===true){
             console.clear()
             console.log("=========UPDATE ORDERS===========");
             console.log("")
-            let id=parseInt(prompt("ingrese la id del producto donde va a actualizar: "))
-            console.log(updateOrder(orderId))
+            let orderId=parseInt(prompt("ingrese la id del producto donde va a actualizar: "))
+            updateOrder(orderId)
             menuactualizar3()
             let eli=parseInt(prompt("ingresa la opcion donde vas a actualizar: "))
             if(eli===1){
                 newDetails=prompt("ingrese la nueva actualizacion de la cantidad: ")
-                console.log(updateOrder(orderId,newDetails))
+                updateOrder(orderId,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===2){
                 newDetails=prompt("ingrese la nueva actualizacion del status: ")
-                console.log(updateOrder(orderId,newDetails))
+                updateOrder(orderId,newDetails)
                 console.log("se ha realizado su actualizacion con exito!!")
             }
             if(eli===3){
@@ -491,7 +553,7 @@ while(bool===true){
             console.log("=========DELETE ORDERS===========");
             console.log("")
             let orderId=parseInt(prompt("ingrese la id del producto que vas a eliminar: "))
-            console.log(deleteOrder(orderId));
+            deleteOrder(orderId)
             console.log("se ha realizado la eliminacion con exito!!");
             console.log(json);
 
@@ -502,11 +564,55 @@ while(bool===true){
         }
 
     }
-    if(opc===6){ 
+    if(opc===4){
+        console.clear()
+        console.log("========REPORTING==========");
+        console.log("")
+        let mostrar=parseInt(prompt(":::::MENU::::\n1.Sales reports\n2.Reports products\ningrese el numero de la opcion a la que desea acceder: "))
+        if(mostrar===1){
+            console.clear()
+            console.log("======== SALES REPORTS==========");
+            console.log("")
+           
+            let mostrar=parseInt(prompt(":::::MENU::::\n1.Diario\n2.Mensual\ningrese el numero de la opcion a la que desea acceder: "))
+            if(mostrar===1){
+                console.clear()
+                console.log("======== SALES REPORTS (Diarios)==========");
+                console.log("")
+                let date= new Date()
+                let startDate= date.toLocaleDateString('en-CA')
+                
+                let date1= new Date()
+                let  endDate= date1.toLocaleDateString('en-CA')
+              
+                
+                generateSalesReport(startDate, endDate)
+
+            }
+            if(mostrar===2){
+                console.clear()
+                console.log("======== SALES REPORTS (Mensuales)==========");
+                console.log("")
+                startDate=prompt("ingrese la fecha inicial")
+                endDate=prompt("ingrese la fecha final")
+                generateSalesReport(startDate, endDate)
+            }
+            
+
+        }
+        if(mostrar===2){
+            console.clear()
+            console.log("========REPORTS PRODUCTS==========");
+            console.log("")
+            generateInventoryReport()
+        }
+        
+    }
+    if(opc===5){ 
         console.clear()
         console.log("========SEARCH===========");
         console.log("")
-        mostrar=parseInt(prompt(":::::MENU::::\n1.search product\n2.search orders\ningrese el numero de la opcion a la que desea acceder: "))
+        let mostrar=parseInt(prompt(":::::MENU::::\n1.search product\n2.search orders\ningrese el numero de la opcion a la que desea acceder: "))
         if(mostrar===1){
             buclesito1=true
             while(buclesito1===true){
@@ -514,21 +620,24 @@ while(bool===true){
                 let opci=parseInt(prompt("por cual  opcion desea buscar: "))
                 if (opci===1){
                     let query=prompt("ingrese el nombre del que busca: ")
-                    console.log(searchProducts(query))
+                    searchProducts(query)
                 }
                 if (opci===2){
                     let query=prompt("ingrese la categoria  del que busca: ")
-                    console.log(searchProducts(query))
+                    searchProducts(query)
                 }
                 if (opci===3){
                     let query=parseInt(prompt("ingrese la id del proovedor del que busca: "))
-                    console.log(searchProducts(query))
+                    searchProducts(query)
                 }
                 if (opci===4){
                     console.log("Regresando...");
                     buclesito1=false 
+                    bool=true
+
                 }
             }  
+            buclesito1=false
         }
         if(mostrar===2){
             buclesito2=true
@@ -537,15 +646,15 @@ while(bool===true){
                 let opci=parseInt(prompt("por cual  opcion desea buscar: "))
                 if (opci===1){
                     let criteria=prompt("ingrese el status del que busca: ")
-                    console.log(filterOrders(criteria))
+                    filterOrders(criteria)
                 }
                 if (opci===2){
                     let criteria=prompt("ingrese la fecha  del que busca: ")
-                    console.log(filterOrders(criteria))
+                    filterOrders(criteria)
                 }
                 if (opci===3){
                     let criteria=parseInt(prompt("ingrese la id del producto del que busca: "))
-                    console.log(filterOrders(criteria))
+                    filterOrders(criteria)
                 }
                 if (opci===4){
                     console.log("Regresando...")
@@ -553,10 +662,11 @@ while(bool===true){
                     var opc=parseInt(prompt("ingrese la opcion a la que deseas acceder: "))
                     bool=true
                 }
+                buclesito2=false
             }
         }  
     }
-    if(opc===7){
+    if(opc===6){
         console.log("Finalizando programa...")
         bool=false
     }
