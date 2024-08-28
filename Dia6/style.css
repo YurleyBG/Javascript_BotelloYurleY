@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(127, 199, 199);
+
+}
+#caja1{
+    width: 100vw;
+    height: 5vw;
+    border: 1px solid black;
+    margin: -0.6vw;
+    background-color: azure;
+    text-align: center;
+    justify-content: center;
+    color:black;
+    font-size: 4vw;
+    position:fixed;
+
+}
+#boton1{
+    margin-top: 13vw;
+}
+
+#addproduct1{
+    display: none;
+    width: 100vw;
+    height: 6vw;
+    border: 1px solid black;
+    
+    
+}
+input{
+    width: 9vw;
+    height: 1vw;
+
+}
+
