@@ -28,7 +28,7 @@ function addProduct(){
         fetch("elJson.json")
         .then(res=>res.json())
         .then(datos=>{
-            
+            prod=[]
             let product=datos[0]["products"]
             let idd=parseInt(document.getElementById("id1").value);
             let namee=parseInt(document.getElementById("nombre").value);
@@ -36,26 +36,19 @@ function addProduct(){
             let pricee=parseInt(document.getElementById("precio").value);
             let stockk=parseInt(document.getElementById("stock").value);
             let supplieridd=parseInt(document.getElementById("proveedor").value);
-            product["id"]=idd
-            product["name"]=namee
-            product["category"]=categoryy
-            product["price"]=pricee
-            product["quantityInStock"]=stockk
-            product["supplierId"]=supplieridd
-         
-    
-            
-            
-        
+            prod=([{"id":idd, "name":namee, "category":categoryy,"price":pricee,"quantityInStock":stockk,"supplierId":supplieridd}])
+
+            datos[0]["products"].push(prod)
+            S
         })
     }
     
-    console.log(`nombre: ${"name"}`)
+   
     
 }
-document.getElementById("botonsuppl").addEventListener("click",viewProducts);
+document.getElementById("botonsuppl").addEventListener("click",viewsupplers);
 
-function viewProducts(){
+function viewsupplers(){
     fetch("elJson.json")
     .then(res=>res.json())
     .then(datos=>{

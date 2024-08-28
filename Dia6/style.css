@@ -14,13 +14,15 @@ body{
     font-size: 4vw;
     position:fixed;
 
+
 }
+
 #boton1{
     margin-top: 13vw;
 }
 
 #addproduct1{
-    display: none;
+ 
     width: 100vw;
     height: 6vw;
     border: 1px solid black;
