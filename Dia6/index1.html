@@ -8,18 +8,18 @@
 </head>
 <body>
    <div id="caja1">INVENTORY SYSTEM</div>
-
+    <div id="contenedorbot">
         <button id="boton0">products</button>
         <button id="boton01">supplers</button>
         <button id="boton02">orders</button>
-  
-   
+    </div>
 
-   <button id="boton1">ver productos</button>
-   <div id="verproduct"></div>
-   <button id="boton2"> agregar productos</button>
-   <form method="get">
-        <div id="addproduct1">
+    <button id="boton1" style="display: none;">ver productos</button>
+    <div id="verproduct"></div>
+    <button id="boton2" style="display: none;">Agregar productos</button>
+    <div id="formulario" style="display: none;">
+        <form id="Posts" >
+    
             <label >ingrese el id :</label>
             <input type="number" id="id1" required >
             <label >ingrese el nombre:</label>
@@ -32,13 +32,60 @@
             <input type="number" id="stock" required >
             <label >ingrese el id del proveedor:</label>
             <input type="number" id="proveedor" required >
-            <button type="submit" id="enviarr"> Enviar</button>
+            <button type="submit" id="enviarr">Enviar</button>
+            
+        </form>
+    </div>
+    
+    <button id="boton3" style="display: none;">Actualizar productos</button>
+    <div id="updateproduct"></div>
+    <button id="boton4" style="display: none;">delete productos</button>
+    <div id="deleteproduct"></div>
+    
 
-        </div>
-   </form>
-   
-   <button id="botonsuppl">ver proveedor</button>
+   <button id="botonsuppl" style="display: none;">ver proveedor</button>
    <div id="verproveedor"></div>
+   <button id="botonsupple1" style="display: none;">Agregar proveedor</button>
+   <div id="formulario1" style="display: none;">
+       <form id="Posts1" >
+   
+        <label >ingrese el id :</label>
+        <input type="number" id="idd1" required >
+        <label >ingrese el nombre:</label>
+        <input type="text" id="nombres" required>
+        <label >ingrese el phone:</label>
+        <input type="text" id="phone" required >
+        <label >ingrese el email:</label>
+        <input type="number" id="email" required >
+        <label >ingrese la direccion:</label>
+        <input type="number" id="address" required >
+        <button type="submit" id="enviarr">Enviar</button>
+           
+       </form>
+   </div>
+   <button id="botonorder" style="display: none;">ver orders</button>
+   <div id="verorder"></div>
+   <button id="botonsupple1" style="display: none;">Agregar orders</button>
+   <div id="formulario1" style="display: none;">
+       <form id="Posts1" >
+   
+        <label >ingrese el id :</label>
+        <input type="number" id="idd1" required >
+        <label >ingrese el nombre:</label>
+        <input type="text" id="nombres" required>
+        <label >ingrese el phone:</label>
+        <input type="text" id="phone" required >
+        <label >ingrese el email:</label>
+        <input type="number" id="email" required >
+        <label >ingrese la direccion:</label>
+        <input type="number" id="address" required >
+        <button type="submit" id="enviarr">Enviar</button>
+           
+       </form>
+   </div>
+
+
+
 
 </body>
 <script src="./script.js"></script>
