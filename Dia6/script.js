@@ -42,14 +42,7 @@ boton02.addEventListener("click", (e) => {
     document.getElementById("eliminarorden").style.display  = `block`;
  
 });
-eliminarorden.addEventListener("click", (e) => {
-    document.getElementById("eliminarordin").style.display  = `block`;
 
-});
-eliminarproveedor.addEventListener("click", (e) => {
-    document.getElementById("eliminarprovee").style.display  = `block`;
-
-});
 boton4.addEventListener("click", (e) => {
     document.getElementById("deleteproduct").style.display  = `block`;
 
@@ -101,6 +94,15 @@ opc3.addEventListener("click", (e) => {
 });
 opc4.addEventListener("click", (e) => {
     document.getElementById("div4").style.display  = `block`;
+
+});
+
+eliminarorden.addEventListener("click", (e) => {
+    document.getElementById("eliminarordin").style.display  = `block`;
+
+});
+eliminarproveedor.addEventListener("click", (e) => {
+    document.getElementById("eliminarprovee").style.display  = `block`;
 
 });
 actuaproveedor.addEventListener("click", (e) => {

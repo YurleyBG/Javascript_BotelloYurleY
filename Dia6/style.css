@@ -28,6 +28,19 @@ body{
     border-radius: 0.5vw;
 
 }
+#formulario3{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 19vw;
+    left: 16vw;
+    width: 18vw;
+    height: 25vw;
+    border: 5px solid rgb(76, 80, 79);
+    background-color: azure;
+    border-radius: 0.5vw;
+
+}
 label{
     position: relative;
     top: 1.5vw;
