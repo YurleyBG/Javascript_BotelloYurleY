@@ -9,80 +9,161 @@
 <body>
    <div id="caja1">INVENTORY SYSTEM</div>
     <div id="contenedorbot">
-        <button id="boton0">products</button>
-        <button id="boton01">supplers</button>
-        <button id="boton02">orders</button>
+        <button id="boton0">PRODUCTS</button>
+        <button id="boton01">SUPPLERS</button>
+        <button id="boton02">ORDERS</button>
     </div>
 
-    <button id="boton1" style="display: none;">ver productos</button>
-    <div id="verproduct"></div>
-    <button id="boton2" style="display: none;">Agregar productos</button>
+    <button id="boton1" style="display: none;">ver</button>
+    <div id="verproduct" style="display: none;"></div>
+    <button id="boton3" style="display: none;">Actualizar</button>
+    
+    
+    <div id="updateproduct" style="display: none;">
+        <input type="number" id="iddeseada" placeholder="id">
+        <button type="submit" id="enviar0">Enviar</button>
+
+        <button id="opc1" style="display: none;">name</button>
+        <div id="div1" style="display: none;">
+            <input type="text" id="youn1" placeholder="new name">
+            <button type="submit" id="enviar1">Enviar</button>
+        </div>
+
+        <button id="opc2" style="display: none;">category</button>
+        <div id="div2" style="display: none;">
+            <input type="text" id="youn2" placeholder="new category">
+            <button type="submit" id="enviar2">Enviar</button>
+        </div>
+
+        <button id="opc3" style="display: none;">price</button>
+        <div id="div3" style="display: none;">  
+            <input type="number" id="youn3" placeholder="new price">
+            <button type="submit" id="enviar3">Enviar</button>
+        </div>
+
+        <button id="opc4"style="display: none;">quantityInStock</button>
+        <div id="div4" style="display: none;">
+            <input type="number" id="youn4" placeholder="new stock">
+            <button type="submit" id="enviar4">Enviar</button>
+        </div>
+   
+    
+
+    </div>
+    <button id="boton4" style="display: none;">Eliminar</button>
+    <div id="deleteproduct" style="display: none;">
+        <input type="number" id="ideliminar" placeholder="id a eliminar">
+        <button type="submit" id="borrar"> Eliminar</button>
+    </div>
+    <button id="boton2" style="display: none;">Agregar</button>
     <div id="formulario" style="display: none;">
         <form id="Posts" >
     
-            <label >ingrese el id :</label>
+            <label >ingrese el id :</label><br>
             <input type="number" id="id1" required >
-            <label >ingrese el nombre:</label>
+            <label >ingrese el nombre:</label><br>
             <input type="text" id="nombre" required>
-            <label >ingrese la categoria:</label>
+            <label >ingrese la categoria:</label><br>
             <input type="text" id="categoria" required >
-            <label >ingrese el precio:</label>
+            <label >ingrese el precio:</label><br>
             <input type="number" id="preecio" required >
-            <label >ingrese el stock:</label>
+            <label >ingrese el stock:</label><br>
             <input type="number" id="stock" required >
-            <label >ingrese el id del proveedor:</label>
-            <input type="number" id="proveedor" required >
+            <label >ingrese el id del proveedor:</label><br>
+            <input type="number" id="proveedor" required ><br>
             <button type="submit" id="enviarr">Enviar</button>
             
         </form>
     </div>
-    
-    <button id="boton3" style="display: none;">Actualizar productos</button>
-    <div id="updateproduct"></div>
-    <button id="boton4" style="display: none;">delete productos</button>
-    <div id="deleteproduct"></div>
+    <button id="botonsuppl" style="display: none;">ver </button>
+    <div id="verproveedor" style="display: none;"></div>
+    <button id="actuaproveedor" style="display: none;">Actualizar</button>
+     
+    <div id="updateproduct" style="display: none;">
+        <input type="number" id="iddeseada11" placeholder="id new">
+        <button type="submit" id="enviar00">Enviar</button>
+
+        <button id="opc11" style="display: none;">name</button>
+        <div id="div11" style="display: none;">
+            <input type="text" id="youn11" placeholder="new name">
+            <button type="submit" id="enviar11">Enviar</button>
+        </div>
+
+        <button id="opc22" style="display: none;">category</button>
+        <div id="div22" style="display: none;">
+            <input type="text" id="youn22" placeholder="new category">
+            <button type="submit" id="enviar22">Enviar</button>
+        </div>
+
+        <button id="opc33" style="display: none;">price</button>
+        <div id="div33" style="display: none;">  
+            <input type="number" id="youn33" placeholder="new price">
+            <button type="submit" id="enviar33">Enviar</button>
+        </div>
+
+        <button id="opc44"style="display: none;">quantityInStock</button>
+        <div id="div44" style="display: none;">
+            <input type="number" id="youn44" placeholder="new stock">
+            <button type="submit" id="enviar44">Enviar</button>
+        </div>
+   
     
 
-   <button id="botonsuppl" style="display: none;">ver proveedor</button>
-   <div id="verproveedor"></div>
-   <button id="botonsupple1" style="display: none;">Agregar proveedor</button>
-   <div id="formulario1" style="display: none;">
-       <form id="Posts1" >
+    </div>
+    <button id="eliminarproveedor" style="display: none;">Eliminar</button>
+    <div id="eliminarprovee" style="display: none;">
+        <input type="number" id="elimini" placeholder="eliminar id">
+        <button type="submit" id="borrador">Eliminar</button>
+    </div>
+    
+    
+    <button id="botonsupple1" style="display: none;">Agregar </button>
+    <div id="formulario1" style="display: none;">
+    <form id="Posts1" >
+
+     <label >ingrese el id :</label>
+     <input type="number" id="idd1" required >
+     <label >ingrese el nombre:</label>
+     <input type="text" id="nombres" required>
+     <label >ingrese el phone:</label>
+     <input type="text" id="phone" required >
+     <label >ingrese el email:</label>
+     <input type="text" id="email" required >
+     <label >ingrese la direccion:</label>
+     <input type="number" id="address" required >
+     <button type="submit" id="enviarr">Enviar</button>
+        
+    </form>
+</div>
    
-        <label >ingrese el id :</label>
-        <input type="number" id="idd1" required >
-        <label >ingrese el nombre:</label>
-        <input type="text" id="nombres" required>
-        <label >ingrese el phone:</label>
-        <input type="text" id="phone" required >
-        <label >ingrese el email:</label>
-        <input type="number" id="email" required >
-        <label >ingrese la direccion:</label>
-        <input type="number" id="address" required >
-        <button type="submit" id="enviarr">Enviar</button>
-           
-       </form>
-   </div>
-   <button id="botonorder" style="display: none;">ver orders</button>
-   <div id="verorder"></div>
-   <button id="botonsupple1" style="display: none;">Agregar orders</button>
-   <div id="formulario1" style="display: none;">
-       <form id="Posts1" >
-   
-        <label >ingrese el id :</label>
-        <input type="number" id="idd1" required >
-        <label >ingrese el nombre:</label>
-        <input type="text" id="nombres" required>
-        <label >ingrese el phone:</label>
-        <input type="text" id="phone" required >
-        <label >ingrese el email:</label>
-        <input type="number" id="email" required >
-        <label >ingrese la direccion:</label>
-        <input type="number" id="address" required >
-        <button type="submit" id="enviarr">Enviar</button>
-           
-       </form>
-   </div>
+<button id="botonorder" style="display: none;">ver</button>
+<div id="verorder" style="display: none;"></div>
+<button id="botonorder2" style="display: none;">Agregar </button>
+<button id="actualizarorden" style="display: none;">Actualizar</button>
+<button id="eliminarorden" style="display: none;">Eliminar</button>
+<div id="eliminarordin" style="display: none;">
+    <input type="number" id="eliminiordi" placeholder="eliminar orden">
+    <button type="submit" id="borradorcito">Eliminar</button>
+</div>
+
+<div id="formulario2" style="display: none;">
+    <form id="Posts1" >
+
+     <label >ingrese el id :</label>
+     <input type="number" id="orid" required >
+     <label >ingrese el id product:</label>
+     <input type="number" id="proid" required>
+     <label >ingrese la cantidad:</label>
+     <input type="text" id="canti" required >
+     <label >ingrese el orden date:</label>
+     <input type="text" id="date" required >
+     <label >ingrese la status:</label>
+     <input type="text" id="stat" required >
+     <button type="submit" id="enviarr">Enviar</button>
+        
+    </form>
+</div>
+    
 
 
 
