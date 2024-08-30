@@ -27,7 +27,7 @@
 }
 #tablaconte1{
     position: absolute;
-    top: 35vw;
+    top: 25vw;
     left: 1vw;
 
   
@@ -48,4 +48,7 @@
 }
 thead{
     background-color: white;
+}
+img{
+   
 }

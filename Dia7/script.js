@@ -1,7 +1,7 @@
 document.getElementById("presionar").addEventListener("click",function(event1){
     event1.preventDefault();
     let info=""
-    for (let i=1 ; i<732; i++){
+    for (let i=1 ; i<733; i++){
         info=`https://superheroapi.com/api.php/f70bcb6027e4b5f0b15e639ae7a2d273/`+String(i);
         
         fetch(info)
@@ -39,11 +39,11 @@ document.getElementById("presionar").addEventListener("click",function(event1){
                         alignment: ${data.biography.alignment}<br>
                     </td>
                     <td>
-                       race: ${data.appearance.race}<br>
-                       height: ${data.appearance.height}<br>
-                        weight: ${data.appearance.weight}<br>
-                       eye-color: ${data.appearance["eye-color"]}<br>
-                       hair-color: ${data.appearance["hair-color"]}<br>
+                       <span style="color: rgb(189, 146, 230)">race:</span> ${data.appearance.race}<br>
+                        <span style="color:blue">height:</span>${data.appearance.height}<br>
+                        <span style="color:blue"> weight:</span> ${data.appearance.weight}<br>
+                        <span style="color:blue">eye-color: </span>${data.appearance["eye-color"]}<br>
+                        <span style="color:blue">hair-color:</span> ${data.appearance["hair-color"]}<br>
                     </td>
                     
                     `;
@@ -64,8 +64,7 @@ document.getElementById("presionar").addEventListener("click",function(event1){
                         relatives: ${data.connections.relatives}<br>
                     </td>
                     <td>
-                        url: ${data.image["url"]}<br>
-                        
+                        <img style=" width:20vw; height:15vw " src= '${data.image["url"]}'>
                     </td>
                     
                     `;
