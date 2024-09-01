@@ -17,6 +17,7 @@ function event1(){
                         fetch(speciess)
                         .then (ten=>ten.json())
                         .then(speacies1=>{
+                            
                             document.getElementById("mostrar").innerHTML = ""
                             document.getElementById("mostrar").innerHTML += `
                             <table  class="table table-dark table-hover">
@@ -81,6 +82,7 @@ function event1(){
                                     <td>
                                         <ul class="list-group">
                                             <li class="list-group-item">
+                                            
                                                 Name: ${datos.title}<br>
                                                 episode_id: ${datos.episode_id}<br>
                                                 opening_crawl: ${datos.opening_crawl}<br>
@@ -119,9 +121,11 @@ function event1(){
                                         </ul>
                                     </td>
                                     </tr>
+                                    
                                 </tbody> 
                             </table>
-                            `   
+                            ` 
+                            
                         })   
                     })     
                 })
@@ -130,6 +134,58 @@ function event1(){
     })
 };
 
+document.getElementById("presionar").addEventListener("click",event2)
 
+function event2(){
+    let idecita=document.getElementById("obtenerid").value;
+    fetch(`https://swapi.py4e.com/api/people/`+idecita)
+    .then(res=>res.json())
+    .then(data=>{
+        let estarshipse=data.starships
+        estarshipse.forEach((elemenstar)=>{
+            fetch(elemenstar)
+            .then (ten=>ten.json())
+            .then(star11=>{
+                document.getElementById("mostrar1").innerHTML += `
+             
+                <table class="table table-dark table-hover">
+                <tbody> 
+                <tr>
+                    <th scope="row">starships:</th>
+                    <td>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Name: ${star11.name}<br>
+                                model: ${star11.model}<br>
+                                manufacturer: ${star11.manufacturer}<br>
+                                cost_in_credits: ${star11.cost_in_credits}<br>
+                                length: ${star11.length}<br>
+                                max_atmosphering_speed: ${star11.max_atmosphering_speed}<br>
+                                crew: ${star11.crew}<br>
+                                passengers: ${star11.passengers}<br>
+                                cargo_capacity: ${star11.cargo_capacity}<br>
+                                consumables: ${star11.consumables}<br>
+                                hyperdrive_rating: ${star11.hyperdrive_rating}<br>
+                                MGLT: ${star11.MGLT}<br>
+                                starship_class: ${star11.starship_class}<br>
+                                created: ${star11.created}<br>
+                                edited: ${star11.edited}<br>
+                                url: ${star11.url}<br></br>
+                            
+                            </li>
+                            
+                        </ul>
+                    </td>
+                    </tr>
+                </tbody> 
+                </table>
+                ` 
+                        
+                    
+               
+            })
+        })
+    })
+}
 
                             
