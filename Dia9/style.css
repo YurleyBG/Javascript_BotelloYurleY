@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+#container{
+   display: flex;
+   justify-content: center;
+   height: 100vh;
+   align-items: center;
+   
+}
+#boton{
+    position: relative;
+    left: -33em;
+    width: 19em;
+    height: 3em;
+    top: 8em;
+    background-color: grey ;
+}
+#inputingre{
+    width: 23em;
+    height: 3em;
+}
+#mostrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left:-16em;
+    top: -4em;
+  
+}
+#mostrar1{
+   
+    position: relative;
+    left:-16em;
+    top: 2em;
+    font-size: 2em;
+  
+}
