@@ -11,11 +11,9 @@
 #boton{
     position: relative;
     left:3em;
-    width: 19em;
-    height: 3em;
+    width: 18.5em;
     margin-top: -24em ;
-    background-color: rgb(58, 56, 56) ;
-    box-shadow: 0vw 0.1vw 0vw 0vw rgb(168, 167, 167),
+    box-shadow: 0vw 0.2vw 0vw 0vw rgb(139, 139, 139),
     0vw 0.3vw 0vw 0.1vw rgb(20, 20, 20);
     border-radius: 0.5em;
     
