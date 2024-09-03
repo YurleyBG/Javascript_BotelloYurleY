@@ -1,0 +1,64 @@
+body{
+    
+    color: white;
+    background-color: black;
+}
+#nombrep{
+    position: relative;
+    left: 55em;
+    
+    
+}
+#imagep{
+    position: relative;
+    left: 52em;
+    width: 10vw;
+   
+    
+}
+#container{
+    position: relative;
+    top: 2vw;
+    left: 1vw;
+}
+#episi{
+    position: relative;
+    top: 30vw;
+    left: 5vw;
+    width: 30vw;
+    height: auto;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+#fondo{
+    margin-top: -4vw;
+    margin-left: -4vw;
+    width: 100vw;
+    height: 50vw;
+}
+#obtenerid{
+    position: relative;
+    top: -45vw;
+    left: 2vw;
+}
+#presionar{
+    position: relative;
+    top: -45vw;
+    left: 2vw;
+}
+#perso{
+   
+    position: relative;
+    top: -294vw;
+    left: 65vw;
+    width: 30vw;
+    height: auto;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+#img2{
+    width: 10vw;
+    height: 5vw;
+}
