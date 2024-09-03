@@ -11,16 +11,19 @@ function verinfo(url) {
 
         let paso1=data.sprites.other.showdown.front_default//entrar en la api en busca del gift
         let name1=data.name
+    
         let ide=data.id
         document.getElementById("mostrar").innerHTML =""//mostrar gift
         document.getElementById("mostrar").innerHTML += `
-            <img src="${paso1}" style="width:6vw"> 
+            <img src="${paso1}" style="width:6vw; height:6vw">
+            <audio autoplay src="${data.cries.latest}" ></audio>
         `
         document.getElementById("mostrar1").innerHTML =""//mostrar nombre y id
         document.getElementById("mostrar1").innerHTML += `
            <span style="color:rgb(136, 131, 131)"> ${ide}-</span>
            <span style="color:black">${name1}</span>
         `
+       
     })
 }
 document.getElementById("prew").addEventListener("click",event2)//boton de prew
