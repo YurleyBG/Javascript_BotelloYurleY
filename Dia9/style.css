@@ -71,14 +71,14 @@
     width:8em;
     height: 3.2em;
     border-radius: 0.5em;
-    box-shadow: 0vw 0.2vw 0vw 0vw rgb(65, 63, 63),
-    0vw 0.6vw 0vw 0.1vw rgb(20, 20, 20);
+    box-shadow: 0vw 0.1vw 0vw 0vw rgb(65, 63, 63),
+    0vw 0.3vw 0vw 0.1vw rgb(20, 20, 20);
 }
 #div2{
     background-color: rgb(22, 21, 21);
     width:8em;
     height: 3.2em;
     border-radius: 0.5em;
-    box-shadow: 0vw 0.2vw 0vw 0vw rgb(65, 63, 63),
-    0vw 0.6vw 0vw 0.1vw rgb(20, 20, 20);
+    box-shadow: 0vw 0.1vw 0vw 0vw rgb(65, 63, 63),
+    0vw 0.3vw 0vw 0.1vw rgb(20, 20, 20);
 }
