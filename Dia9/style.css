@@ -1,42 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Oxanium', cursive;
+@font-face {
+    font-family:cursive ;
+    src: url("https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap&#39");
 }
+
 #container{
-   display: flex;
-   justify-content: center;
-   height: 100vh;
-   align-items: center;
-   
+  position:absolute;
+  left: 36vw;
+  top: 2em;
 }
 #boton{
     position: relative;
-    left: -33em;
+    left:3em;
     width: 19em;
     height: 3em;
-    top: 8em;
-    background-color: grey ;
+    margin-top: -24em ;
+    background-color: rgb(58, 56, 56) ;
+    box-shadow: 0vw 0.1vw 0vw 0vw rgb(168, 167, 167),
+    0vw 0.3vw 0vw 0.1vw rgb(20, 20, 20);
+    border-radius: 0.5em;
+    
+   
 }
 #inputingre{
-    width: 23em;
+    width: 22em;
     height: 3em;
+    border-radius: 0.5em;
 }
 #mostrar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    left:-16em;
-    top: -4em;
-  
+    left:10em;
+    top: -28em;
+    height: 10em;
 }
 #mostrar1{
-   
+
+    position: absolute;
+    left:6em;
+    top: 12.7em;
+    font-size: 1.7em;
+    width:9em ;
+    height: 4vw;
+    font-family: 'Oxanium', cursive;
+    color: rgb(136, 131, 131);
+
+}
+#contenerbotones{
+
     position: relative;
-    left:-16em;
-    top: 2em;
-    font-size: 2em;
-  
+    top: 2.5em;
+    width: 19em;
+    height: 3em;
+    left: 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+#prew{
+    background-color: rgb(53, 52, 52);
+    width:9.4em;
+    color: white;
+    height: 3.5em;
+}
+#Next{
+    background-color: rgb(53, 52, 52);
+    color: white;
+    width:9.4em;
+    height: 3.5em;
+}
+#div1{
+    background-color: rgb(22, 21, 21);
+    width:8em;
+    height: 3.2em;
+    border-radius: 0.5em;
+    box-shadow: 0vw 0.2vw 0vw 0vw rgb(65, 63, 63),
+    0vw 0.6vw 0vw 0.1vw rgb(20, 20, 20);
+}
+#div2{
+    background-color: rgb(22, 21, 21);
+    width:8em;
+    height: 3.2em;
+    border-radius: 0.5em;
+    box-shadow: 0vw 0.2vw 0vw 0vw rgb(65, 63, 63),
+    0vw 0.6vw 0vw 0.1vw rgb(20, 20, 20);
 }
