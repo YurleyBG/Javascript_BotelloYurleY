@@ -1,64 +1,18 @@
 body{
-    
-    color: white;
-    background-color: black;
+    background-image: url(fondo.jpg);
+    background-size: cover;
 }
-#nombrep{
-    position: relative;
-    left: 55em;
-    
-    
+#id{
+    color: rgb(89, 255, 0);
+    border: solid rgb(89, 255, 0) 3px;
 }
-#imagep{
-    position: relative;
-    left: 52em;
-    width: 10vw;
-   
-    
+#flecha{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
 }
-#container{
-    position: relative;
-    top: 2vw;
-    left: 1vw;
+#mostrar{
+    display: flex;
 }
-#episi{
-    position: relative;
-    top: 30vw;
-    left: 5vw;
-    width: 30vw;
-    height: auto;
-    color: black;
-    background-color: white;
-    text-align: center;
-}
-#fondo{
-    margin-top: -4vw;
-    margin-left: -4vw;
-    width: 100vw;
-    height: 50vw;
-}
-#obtenerid{
-    position: relative;
-    top: -45vw;
-    left: 2vw;
-}
-#presionar{
-    position: relative;
-    top: -45vw;
-    left: 2vw;
-}
-#perso{
-   
-    position: relative;
-    top: -294vw;
-    left: 65vw;
-    width: 30vw;
-    height: auto;
-    color: black;
-    background-color: white;
-    text-align: center;
-}
-#img2{
-    width: 10vw;
-    height: 5vw;
+#imagenes{
+    width: 4rem;
 }
