@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    height: 50vw;
 }
 #contenedor{
     position: relative;
