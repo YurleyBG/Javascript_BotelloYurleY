@@ -1,0 +1,70 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500";
+@import "https://fonts.googleapis.com/css?family=Raleway:400";
+body{
+    font-family: "ubuntu";
+}
+#cajap{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vw;
+    border: 1px solid #d4d4d4;
+    background-color: #f9f9f9;
+
+}
+#circulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 39.9vw;
+    top: 4vw;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50vw;
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+}
+#imgperfil{
+    
+    width: 18vw;
+    height: 18vw;
+    border-radius: 50vw;
+    
+}
+#hi{
+    position: absolute;
+    font-size: 1vw;
+    left: 47vw;
+    top: 26vw;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#name{
+    margin-top: 28vw;
+    font-weight: 500;
+    font-size: 2vw;
+}
+#nperson{
+    position: absolute;
+    top: 35vw;
+    left: 20vw;
+    border: 1px solid black;
+    width: 4vw;
+    height: 6vw;
+    overflow: hidden;
+}
+#img{
+    position: relative;
+    left: -0.1vw;
+    top: -5vw;
+    transform: ;
+}
+#img:hover{
+
+
+}
