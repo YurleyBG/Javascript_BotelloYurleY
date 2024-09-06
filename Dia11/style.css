@@ -84,8 +84,8 @@ body{
 #div1{
     background-image: url("pincture/icons.jpeg");
     width: 6vw;
-    height:6.1vw;
-    background-position-y:-6.5vw ;
+    height:5vw;
+    background-position-y:-5vw ;
     transform: scale(0.5);
     transition:  ease 0.5s;
     position: absolute;
@@ -100,9 +100,9 @@ body{
     cursor: pointer;
     background-image: url("pincture/icons.jpeg");
     width: 6vw;
-    height:6.1vw;
-    background-position-x:-8vw ;
-    background-position-y:-6.5vw ;
+    height:5vw;
+    background-position-x:-5.7vw ;
+    background-position-y:-5vw ;
     transform: scale(0.6);
     transition: linear 0.5s;
     position: absolute;
@@ -116,9 +116,9 @@ body{
     cursor: pointer;
     background-image: url("pincture/icons.jpeg");
     width: 6vw;
-    height:6.1vw;
-    background-position-x:-17vw ;
-    background-position-y:-6.5vw ;
+    height:5vw;
+    background-position-x:-13vw ;
+    background-position-y:-5vw ;
     transform: scale(0.5);
     transition: ease 0.5s;
     position: absolute;
@@ -131,9 +131,9 @@ body{
 #div4{
     background-image: url("pincture/icons.jpeg");
     width: 6vw;
-    height:6.1vw;
-    background-position-x:-26vw ;
-    background-position-y:-6.5vw ;
+    height:5vw;
+    background-position-x:-20vw ;
+    background-position-y:-5vw ;
     transform: scale(0.5);
     transition: ease 0.5s;
     position: absolute;
@@ -148,9 +148,9 @@ body{
     cursor: pointer;
     background-image: url("pincture/icons.jpeg");
     width: 6vw;
-    height:6.1vw;
-    background-position-x:-35vw ;
-    background-position-y:-6.5vw ;
+    height:5vw;
+    background-position-x:-28vw ;
+    background-position-y:-5vw ;
     transform: scale(0.5);
     transition: ease 0.5s;
     position: absolute;
@@ -163,10 +163,10 @@ body{
 #div6{
     cursor: pointer;
     background-image: url("pincture/icons.jpeg");
-    width: 6vw;
-    height:6.1vw;
-    background-position-x:-44vw ;
-    background-position-y:-6.5vw ;
+    width: 5.5vw;
+    height:5vw;
+    background-position-x:-34vw ;
+    background-position-y:-5vw ;
     transform: scale(0.5);
     transition: ease 0.5s;
     position: absolute;
