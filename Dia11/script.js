@@ -3,6 +3,7 @@ fetch(url)
 .then(ren=>ren.json())
 .then(data=>{//se guardan los datos de la api en un json que se almacenara en la variable data
     //se importara la imagen y se llamara el div que tenemos en html para la foto de igual forma con los otros datos
+    let fechaordenada=new Date(data.results[0].dob.date).toLocaleDateString()
     document.getElementById("circulo").innerHTML+=` 
       <img id="imgperfil" src="${data.results[0].picture.large}">
     `
@@ -23,7 +24,7 @@ fetch(url)
     document.getElementById("mostrarnaci").innerHTML+=`
         <p id="hi"> Hi, My birthday is </p>
         <p id="name">
-            ${data.results[0].dob.date}
+            ${fechaordenada}
         </p>
     `
     document.getElementById("mostrardire").innerHTML+=`
