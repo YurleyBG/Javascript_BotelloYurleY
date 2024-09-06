@@ -2,13 +2,36 @@
 @import "https://fonts.googleapis.com/css?family=Raleway:400";
 body{
     font-family: "ubuntu";
+    height: 50vw;
+}
+#container0{
+    width: 100vw;
+    height: 25vw;
+    position:absolute;
+    top: 0vw;
+    left:0 ;
+    background-color: rgb(17, 17, 17);
+
 }
 #cajap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position:absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 15vw;
+    top: 10vw;
+    width: 60vw;
+    height: 30vw;
+    border: 1px solid #d4d4d4;
+    background-color: #ffffff;
+    border-radius: 0 0 0.5vw 0.5vw;
+
+}
+#barra{
+    border-radius: 0.5vw 0.5vw 0 0;
+    position:absolute;
+    top: -1vw;
+    width: 60vw;
+    height: 10vw;
     border: 1px solid #d4d4d4;
     background-color: #f9f9f9;
 
@@ -18,26 +41,25 @@ body{
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 39.9vw;
-    top: 4vw;
-    width: 20vw;
-    height: 20vw;
+    left: 43vw;
+    top: 13vw;
+    width: 12vw;
+    height: 12vw;
     border-radius: 50vw;
     border: 1px solid #d4d4d4;
     background-color: #fff;
 }
 #imgperfil{
     
-    width: 18vw;
-    height: 18vw;
+    width: 11vw;
+    height: 11vw;
     border-radius: 50vw;
     
 }
 #hi{
     position: absolute;
-    font-size: 1vw;
-    left: 47vw;
-    top: 26vw;
+    font-size: 1.2vw;
+    
 }
 #container{
     display: flex;
@@ -45,9 +67,10 @@ body{
     align-items: center;
 }
 #name{
-    margin-top: 28vw;
+    margin-top: 3vw;
     font-weight: 500;
-    font-size: 2vw;
+    font-size: 1.7vw;
+
 }
 #nperson{
     position: absolute;
@@ -58,13 +81,157 @@ body{
     height: 6vw;
     overflow: hidden;
 }
-#img{
-    position: relative;
-    left: -0.1vw;
-    top: -5vw;
-    transform: ;
+#div1{
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-y:-6.5vw ;
+    transform: scale(0.5);
+    transition:  ease 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 12vw;
+    cursor: pointer;
 }
-#img:hover{
-
-
+#div1:hover{
+    background-position-y:0vw ;
+}
+#div2{
+    cursor: pointer;
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-x:-8vw ;
+    background-position-y:-6.5vw ;
+    transform: scale(0.6);
+    transition: linear 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 18vw;
+}
+#div2:hover{
+    background-position-y:0vw ;
+}
+#div3{
+    cursor: pointer;
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-x:-17vw ;
+    background-position-y:-6.5vw ;
+    transform: scale(0.5);
+    transition: ease 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 25vw;
+}
+#div3:hover{
+    background-position-y:0vw ;
+}
+#div4{
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-x:-26vw ;
+    background-position-y:-6.5vw ;
+    transform: scale(0.5);
+    transition: ease 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 32vw;
+    cursor: pointer;
+}
+#div4:hover{
+    background-position-y:0vw ;
+}
+#div5{
+    cursor: pointer;
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-x:-35vw ;
+    background-position-y:-6.5vw ;
+    transform: scale(0.5);
+    transition: ease 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 38vw;
+}
+#div5:hover{
+    background-position-y:0vw ;
+}
+#div6{
+    cursor: pointer;
+    background-image: url("pincture/icons.jpeg");
+    width: 6vw;
+    height:6.1vw;
+    background-position-x:-44vw ;
+    background-position-y:-6.5vw ;
+    transform: scale(0.5);
+    transition: ease 0.5s;
+    position: absolute;
+    top: 22vw;
+    left: 44vw;
+}
+#div6:hover{
+    background-position-y:0vw ;
+}
+#mostrartext{
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
+}
+#mostrarcorreo{
+    display: none;
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
+}
+#mostrarnaci{
+    
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
+}
+#mostrardire{
+    display: none;
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
+}
+#mostrartele{
+    display: none;
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
+}
+#mostrarpass{
+    display: none;
+    width: 30vw;
+    height: 6vw;
+    position: absolute;
+    top: 16vw;
+    display: flex;
+    text-align: center;
+    justify-content:center ;
 }
